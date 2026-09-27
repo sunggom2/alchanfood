@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>페이지를 찾을 수 없습니다 | 알찬식품</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F2F5F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1519" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cstyle%3Epath%7Bfill:%231D6898%7D%40media (prefers-color-scheme:dark)%7Bpath%7Bfill:%2372B6E0%7D%7D%3C/style%3E%3Cpath d='M174,47.75a254.19,254.19,0,0,0-41.45-38.3,8,8,0,0,0-9.18,0A254.19,254.19,0,0,0,82,47.75C54.51,79.32,40,112.6,40,144a88,88,0,0,0,176,0C216,112.6,201.49,79.32,174,47.75ZM128,216a72.08,72.08,0,0,1-72-72c0-57.23,55.47-105,72-118,16.53,13,72,60.75,72,118A72.08,72.08,0,0,1,128,216Zm55.89-62.66a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68Z'/%3E%3C/svg%3E%0A" type="image/svg+xml">
+<style>
+  /* 없는 주소에서 열리므로 외부 CSS, 글꼴, 이미지를 불러오지 않는다. 토큰은 assets/css/site.css 에서 필요한 것만 복사. */
+  :root {
+    color-scheme: light dark;
+    --bg: #F2F5F7; --ink: #0E1A20; --muted: #55656D; --line: #D8E0E5;
+    --accent: #1D6898; --btn: #0E1A20; --btn-hover: #22333C; --btn-ink: #F4F7F9; --focus: #1D6898;
+    --font: -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    --fs-title: clamp(2rem, 1.5rem + 1.6vw, 2.75rem);
+    --gutter: clamp(16px, 3.3vw, 40px);
+    --sp-top: clamp(40px, 5vw, 72px);
+    --r-pill: 999px; --r-xs: 4px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0D1519; --ink: #E4ECEF; --muted: #97A8B0; --line: #253238; --accent: #72B6E0; --btn: #E4ECEF; --btn-hover: #F3F7F9; --btn-ink: #0D1519; --focus: #72B6E0; }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 1rem; line-height: 1.75; letter-spacing: -.01em; word-break: keep-all; }
+  .wrap { width: 100%; max-width: calc(1240px + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+  header { height: 64px; border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; height: 100%; }
+  .brand { display: inline-flex; align-items: center; min-height: 44px; font-size: 1.0625rem; font-weight: 750; letter-spacing: -.02em; line-height: 1; color: var(--ink); text-decoration: none; }
+  main { padding-top: var(--sp-top); padding-bottom: 104px; }
+  h1 { margin: 0; font-size: var(--fs-title); line-height: 1.22; letter-spacing: -.022em; font-weight: 700; text-wrap: balance; }
+  p { margin: 20px 0 0; color: var(--muted); }
+  .actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 32px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 22px; border: 1px solid transparent; border-radius: var(--r-pill); background: var(--btn); color: var(--btn-ink); font-weight: 600; line-height: 1; white-space: nowrap; text-decoration: none; }
+  .link { display: inline-flex; align-items: center; gap: 6px; padding-block: 10px; color: var(--accent); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+  .icon { width: 18px; height: 18px; fill: currentColor; }
+  .nowrap { white-space: nowrap; }
+  .link .icon { width: 16px; height: 16px; }
+  :where(a):focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+  .link:focus-visible { border-radius: var(--r-xs); }
+  @media (hover: hover) { .btn:hover { background: var(--btn-hover); } .link:hover { text-decoration-thickness: 2px; } }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var REPO = 'alchanfood';
+    var base = location.hostname.endsWith('github.io') ? '/' + REPO + '/' : '/';
+    document.querySelectorAll('a[data-path]').forEach(function (a) { a.href = base + a.getAttribute('data-path'); });
+  });
+</script>
+</head>
+<body>
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol></svg>
+<header><div class="wrap"><a class="brand" href="/alchanfood/" data-path="">알찬식품</a></div></header>
+<main class="wrap">
+  <h1>페이지를 <span class="nowrap">찾을 수 없습니다</span></h1>
+  <p>주소가 바뀌었거나 없는 페이지입니다.</p>
+  <div class="actions">
+    <a class="link" href="/alchanfood/" data-path="">처음으로<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    <a class="btn" href="/alchanfood/contact.html" data-path="contact.html">납품 문의<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+  </div>
+</main>
+</body>
+</html>
