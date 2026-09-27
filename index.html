@@ -22,7 +22,7 @@
 <noscript><style>@media (max-width: 47.99em) { .site-header { position: static; height: auto; } .site-header__bar { flex-wrap: wrap; min-height: var(--header-h); } .menu-toggle { display: none; } .site-nav { display: block; width: 100%; padding-bottom: var(--sp-4); } }</style></noscript>
 </head>
 <body>
-<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg>
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-image" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></symbol></svg>
 <a class="skip" href="#main">본문 바로가기</a>
 <header class="site-header">
   <div class="wrap site-header__bar">
@@ -41,8 +41,8 @@
 <section class="hero" id="top">
   <div class="wrap hero__grid">
     <div class="hero__text">
-      <h1 class="display">1급수 지하수로 두부를 만듭니다</h1>
-      <p class="lead">알찬식품은 경기도 포천에 있는 두부 공장입니다. 급식과 외식 프랜차이즈용 두부를 만들고, <span class="nowrap">다른 브랜드의</span> 두부도 OEM으로 생산합니다.</p>
+      <h1 class="display"><span class="hero__line">좋은 콩과 깨끗한 1급수,</span> <span class="hero__line">저희만의 농축 기술로</span> <span class="hero__line">맛있는 두부를 만듭니다</span></h1>
+      <p class="lead">저희는 급식 및 외식 프랜차이즈용 두부를 생산하고, <span class="nowrap">다른 브랜드의</span> 두부도 OEM으로 생산합니다.</p>
       <div class="actions">
         <a class="btn" href="contact.html">납품 문의<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
         <a class="link" href="products.html">제품 보기<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
@@ -55,9 +55,26 @@
 <section class="sec sec--l" id="method">
   <div class="wrap">
     <div class="head">
-      <h2>콩물을 농축해서 굳힙니다</h2>
-      <p class="lead">보통 두부는 불린 콩을 갈아 끓인 뒤, 엉긴 콩물을 보자기에 싸서 눌러 물을 뺍니다. 알찬식품은 콩을 불리지 않고 갈며, 누르는 대신 콩물을 농축해 틀에서 굳힌 뒤 자릅니다.</p>
-      <a class="link" href="facility.html#process">만드는 방법 보기<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <h2>차이점</h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="slot slot--photo"><svg class="icon slot__icon" aria-hidden="true"><use href="#i-image"/></svg><span class="slot__tag">사진 준비 중</span><span class="slot__what">농축 설비나 굳힌 두부 사진</span></div>
+        <h3>콩물을 농축해서 굳힙니다</h3>
+        <p>보통 두부는 불린 콩을 갈아 끓인 뒤, 엉긴 콩물을 보자기에 싸서 눌러 물을 뺍니다. 알찬식품은 콩을 불리지 않고 갈며, 누르는 대신 콩물을 농축해 틀에서 굳힌 뒤 자릅니다.</p>
+        <a class="link" href="facility.html#process">만드는 방법 보기<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </article>
+      <article class="card">
+        <div class="slot slot--photo"><svg class="icon slot__icon" aria-hidden="true"><use href="#i-image"/></svg><span class="slot__tag">사진 준비 중</span><span class="slot__what">지하수 설비 사진</span></div>
+        <h3>1급수 지하수로 만듭니다</h3>
+        <p>두부는 대부분 물입니다. 알찬식품은 1급수 지하수로 두부를 만듭니다.</p>
+        <div class="slot"><span class="slot__tag">준비 중</span><span class="slot__what">수질검사 결과: 검사 기관과 검사 날짜</span></div>
+      </article>
+      <article class="card">
+        <div class="slot slot--photo"><svg class="icon slot__icon" aria-hidden="true"><use href="#i-image"/></svg><span class="slot__tag">사진 준비 중</span><span class="slot__what">원료 콩 사진</span></div>
+        <h3>원료 콩</h3>
+        <div class="slot"><span class="slot__tag">준비 중</span><span class="slot__what">쓰는 콩과 콩을 고르는 기준</span></div>
+      </article>
     </div>
   </div>
 </section>
@@ -65,7 +82,7 @@
 <section class="sec" id="products">
   <div class="wrap">
     <div class="head">
-      <h2>3kg 조각두부와 포장두부</h2>
+      <h2>주요 제품</h2>
     </div>
     <div class="tiles">
       <article class="tile tile--big">
@@ -85,6 +102,33 @@
       </article>
     </div>
     <a class="link" href="products.html">제품 보기<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+  </div>
+</section>
+
+<section class="sec" id="fields">
+  <div class="wrap">
+    <div class="head">
+      <h2>납품 분야</h2>
+    </div>
+    <div class="cards cards--4">
+      <article class="card card--line">
+        <h3>급식</h3>
+        <div class="slot"><span class="slot__tag">준비 중</span><span class="slot__what">이 분야에 맞춘 제품과 납품 방식</span></div>
+      </article>
+      <article class="card card--line">
+        <h3>외식 프랜차이즈</h3>
+        <div class="slot"><span class="slot__tag">준비 중</span><span class="slot__what">이 분야에 맞춘 제품과 납품 방식</span></div>
+      </article>
+      <article class="card card--line">
+        <h3>식자재 유통</h3>
+        <div class="slot"><span class="slot__tag">준비 중</span><span class="slot__what">이 분야에 맞춘 제품과 납품 방식</span></div>
+      </article>
+      <article class="card card--line">
+        <h3>OEM 생산</h3>
+        <p>다른 브랜드의 두부를 알찬식품 생산실에서 만듭니다.</p>
+        <a class="link" href="products.html#oem">OEM 생산 보기<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </article>
+    </div>
   </div>
 </section>
 
