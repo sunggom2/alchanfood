@@ -21,7 +21,7 @@
 <noscript><style>@media (max-width: 47.99em) { .site-header { position: static; height: auto; } .site-header__bar { flex-wrap: wrap; min-height: var(--header-h); } .menu-toggle { display: none; } .site-nav { display: block; width: 100%; padding-bottom: var(--sp-4); } }</style></noscript>
 </head>
 <body>
-<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol><symbol id="i-image" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></symbol></svg>
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false"><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol></svg>
 <a class="skip" href="#main">본문 바로가기</a>
 <header class="site-header">
   <div class="wrap site-header__bar">
@@ -51,20 +51,6 @@
   </div>
 </section>
 
-<section class="sec" id="greeting">
-  <div class="wrap">
-    <div class="head">
-      <h2>인사말</h2>
-    </div>
-    <div class="split split--narrow">
-      <div class="slot slot--photo slot--portrait split__media"><svg class="icon slot__icon" aria-hidden="true"><use href="#i-image"/></svg><span class="slot__tag">사진 준비 중</span><span class="slot__what">대표 사진이나 공장 사진</span></div>
-      <div class="split__body">
-        <div class="slot slot--tall"><span class="slot__tag">준비 중</span><span class="slot__what">대표 인사말 3~5문장과 대표 이름</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="sec" id="overview">
   <div class="wrap">
     <div class="head">
@@ -79,7 +65,7 @@
         <div><dt>전화</dt><dd><a class="num" href="tel:031-533-0562">031-533-0562</a></dd></div>
       </dl>
       <dl class="facts">
-        <div><dt>특허 등록</dt><dd>2003년 「두부의 제조방법」<span class="nowrap num">(제0374845호)</span></dd></div>
+        <div id="history"><dt>특허 등록 이력</dt><dd>2003년 「두부의 제조방법」<span class="nowrap num">(제0374845호)</span></dd></div>
         <div><dt>주요 제품</dt><dd>3kg 조각두부, 알찬두부, 알찬 고소한 순두부</dd></div>
         <div><dt>납품 분야</dt><dd>급식, 외식 프랜차이즈, 식자재 유통</dd></div>
       </dl>
@@ -87,48 +73,13 @@
   </div>
 </section>
 
-<section class="sec" id="history">
-  <div class="wrap">
-    <div class="head">
-      <h2>연혁</h2>
-    </div>
-    <div class="narrow">
-      <dl class="facts facts--inline">
-        <div><dt class="num">2003</dt><dd>특허 등록 「두부의 제조방법」<span class="nowrap num">(제0374845호)</span></dd></div>
-      </dl>
-      <div class="slot"><span class="slot__tag">준비 중</span><span class="slot__what">설립 연도와 주요 연혁(공장 준공, 설비 도입, 제품 출시 등)을 연도순으로</span></div>
-    </div>
-  </div>
-</section>
-
 <section class="sec sec--l" id="water">
   <div class="wrap">
     <div class="head">
-      <h2>두부는 대부분 물입니다</h2>
-      <p class="text">알찬식품은 1급수 지하수로 두부를 만듭니다.</p>
+      <h2>좋은 콩과 깨끗한 물에서<br>시작합니다</h2>
+      <p class="lead">좋은 콩과 깨끗한 1급수, 저희만의 농축 기술로 맛있는 두부를 만듭니다.</p>
+      <p class="text">알찬식품은 1급수 지하수를 사용합니다. 콩물은 진공 상태에서 낮은 온도로 농축하고, 보자기에 싸서 누르지 않고 틀에서 굳힙니다.</p>
       <a class="link" href="facility.html#process">만드는 방법 보기<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="documents">
-  <div class="wrap">
-    <div class="head">
-      <h2>특허증과 성적서</h2>
-    </div>
-    <div class="cards cards--thumbs">
-      <div class="card">
-        <div class="slot slot--photo slot--portrait"><svg class="icon slot__icon" aria-hidden="true"><use href="#i-image"/></svg><span class="slot__tag">사진 준비 중</span><span class="slot__what">특허증 사진</span></div>
-        <p>특허 제0374845호 「두부의 제조방법」</p>
-      </div>
-      <div class="card">
-        <div class="slot slot--photo slot--portrait"><svg class="icon slot__icon" aria-hidden="true"><use href="#i-image"/></svg><span class="slot__tag">사진 준비 중</span><span class="slot__what">먹는물 수질검사 성적서 사진</span></div>
-        <p>먹는물 수질검사 성적서</p>
-      </div>
-      <div class="card">
-        <div class="slot slot--photo slot--portrait"><svg class="icon slot__icon" aria-hidden="true"><use href="#i-image"/></svg><span class="slot__tag">사진 준비 중</span><span class="slot__what">다른 인증서가 있으면 그 사진</span></div>
-        <p><span class="slot-inline">서류 이름 준비 중</span></p>
-      </div>
     </div>
   </div>
 </section>
