@@ -1,4 +1,4 @@
-// 알찬식품 사이트 스크립트: 모바일 메뉴 열고 닫기, 주소 복사. 이 두 가지만 한다.
+// 모바일 메뉴, 같은 페이지 안의 이동, 주소 복사.
 (() => {
   const toggle = document.querySelector('.menu-toggle');
   const panel = document.getElementById('site-nav');
@@ -23,7 +23,33 @@
       if (panel.classList.contains('is-open') && e.relatedTarget && !header.contains(e.relatedTarget)) setOpen(false, false);
     });
     matchMedia('(min-width: 48em)').addEventListener('change', (m) => { if (m.matches) setOpen(false, false); });
+    // 뒤로 가기로 복원된 화면에 이전에 열었던 메뉴가 남지 않게 한다.
+    window.addEventListener('pageshow', () => setOpen(false, false));
   }
+
+  // 분류와 바로가기는 현재 페이지의 위치만 바꾼다. 뒤로 가기는 이전 페이지로 돌아간다.
+  // 실제 href를 유지하므로 새 탭, 링크 복사, JS 없는 탐색도 그대로 사용할 수 있다.
+  document.addEventListener('click', (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest('a[href]');
+    if (!link || link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
+    const url = new URL(link.href);
+    if (url.origin !== location.origin || url.pathname !== location.pathname || url.search !== location.search) return;
+    let id;
+    try { id = decodeURIComponent(url.hash.slice(1)); } catch { return; }
+    const target = id ? document.getElementById(id) : document.getElementById('top');
+    if (!target) return;
+    // replaceState에 실패하는 환경에서는 브라우저의 기본 링크 이동을 사용한다.
+    try { history.replaceState(history.state, '', url); } catch { return; }
+    event.preventDefault();
+    const focusTarget = target.querySelector('h1, h2') || target;
+    if (!focusTarget.hasAttribute('tabindex')) {
+      focusTarget.setAttribute('tabindex', '-1');
+      focusTarget.addEventListener('blur', () => focusTarget.removeAttribute('tabindex'), { once: true });
+    }
+    focusTarget.focus({ preventScroll: true });
+    focusTarget.scrollIntoView({ block: 'start' });
+  });
 
   const copyBtn = document.querySelector('[data-copy]');
   if (copyBtn) {

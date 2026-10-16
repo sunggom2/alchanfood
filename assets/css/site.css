@@ -125,6 +125,12 @@ main > :last-child { padding-bottom: var(--sp-section); }
 .site-header { position: sticky; top: 0; z-index: var(--z-header); height: var(--header-h); background: var(--bg); border-bottom: 1px solid var(--line); }
 .site-header__bar { display: flex; align-items: center; gap: var(--sp-3); height: 100%; }
 .brand { display: inline-flex; align-items: center; min-height: 44px; margin-right: auto; font-size: 1.0625rem; font-weight: var(--fw-brand); letter-spacing: -.02em; line-height: 1; color: var(--ink); text-decoration: none; }
+.page-home { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-1); min-width: 44px; min-height: 44px; text-decoration: none; font-weight: var(--fw-strong); }
+.page-home .icon { width: 16px; height: 16px; transform: rotate(180deg); }
+.page-title { flex: 1; min-width: 0; text-align: center; font-size: 1.0625rem; font-weight: var(--fw-h3); line-height: 1.4; }
+.page-title--link { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2); min-height: 44px; text-decoration: none; }
+.page-title__hint { font-size: var(--fs-small); font-weight: var(--fw-body); color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 47.99em) { .site-header--inner .brand { display: none; } }
 .menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 1px solid var(--line-strong); border-radius: var(--r-pill); background: transparent; color: var(--ink); cursor: pointer; }
 .menu-toggle .icon { width: 20px; height: 20px; }
 .menu-toggle .i-close { display: none; }
@@ -145,6 +151,7 @@ main > :last-child { padding-bottom: var(--sp-section); }
 .site-nav__tel { display: flex; align-items: center; min-height: 44px; margin-top: var(--sp-3); padding-inline: var(--sp-4); font-weight: 600; color: var(--ink); text-decoration: none; }
 
 @media (min-width: 48em) {
+  .page-home, .page-title, .site-nav__home { display: none; }
   .menu-toggle { display: none; }
   .site-nav, .site-nav.is-open { display: flex; align-items: center; gap: var(--sp-3); position: static; max-height: none; overflow: visible; padding: 0; background: none; border: 0; box-shadow: none; }
   .site-nav__list { flex-direction: row; }
@@ -225,6 +232,22 @@ main > :last-child { padding-bottom: var(--sp-section); }
 .home .tile--a .photo img { aspect-ratio: 2.25; object-fit: contain; }
 .home .tile--b .photo img { aspect-ratio: 2.25; object-fit: cover; }
 @media (hover: hover) { .product-title-link:hover { color: var(--accent); } }
+
+/* 홈에서는 제품을 비교하고 고른다. 상세 설명과 큰 사진은 제품 페이지에 둔다. */
+.tiles--choices { grid-template-columns: minmax(0, 1fr); gap: 0; }
+.tiles--choices .tile { border-bottom: 1px solid var(--line); }
+.tiles--choices .tile:first-child { border-top: 1px solid var(--line); }
+.product-choice { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: var(--sp-4); padding-block: var(--sp-5); text-decoration: none; }
+.tiles--choices .tile h3 { margin-top: 0; }
+.product-choice .photo img { aspect-ratio: 1; object-fit: contain; border-radius: var(--r-sm); }
+.product-choice__text p { font-size: var(--fs-small); }
+@media (hover: hover) { .product-choice:hover h3 { color: var(--accent); } }
+@media (min-width: 48em) {
+  .tiles--choices { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-grid); }
+  .tiles--choices .tile, .tiles--choices .tile:first-child { border-top: 0; }
+  .product-choice { grid-template-columns: minmax(0, 1fr); align-items: start; padding-top: 0; gap: var(--sp-5); }
+  .product-choice .photo img { aspect-ratio: 4 / 3; }
+}
 
 /* 홈: 제조 방식과 실제 제품 사진 */
 .method-grid { display: grid; gap: var(--sp-8); padding-block: var(--sp-10); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
