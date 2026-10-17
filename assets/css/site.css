@@ -113,6 +113,8 @@ h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); letter-spacing: var(--t
 .lead { font-size: var(--fs-lead); line-height: var(--lh-lead); letter-spacing: var(--tr-lead); color: var(--muted); max-width: var(--measure-lead); }
 .text { max-width: var(--measure-body); color: var(--muted); }
 .text + .text { margin-top: var(--sp-3); }
+.sentence { display: block; }
+.phrase { display: inline-block; }
 
 /* 섹션: 윗간격만 가진다 */
 .sec { padding-top: var(--sp-section); }
@@ -316,7 +318,7 @@ main > :last-child { padding-bottom: var(--sp-section); }
 }
 .panel .facts { padding-top: 0; border-top: 0; }
 @media (max-width: 47.99em) {
-  .facts--inline > div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); column-gap: var(--sp-4); align-items: baseline; }
+  .facts--inline > div { display: grid; grid-template-columns: 5.5em minmax(0, 1fr); column-gap: var(--sp-4); align-items: baseline; }
   .facts--inline dd { margin-top: 0; }
 }
 .facts dd a, .contact-list dd a, .site-footer a { display: inline-block; padding-block: 12px; margin-block: -12px; }
