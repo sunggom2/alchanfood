@@ -295,6 +295,8 @@ main > :last-child { padding-bottom: var(--sp-section); }
 .panel { display: grid; gap: 28px; padding: clamp(28px, 4vw, 56px); border-radius: var(--r-lg); background: var(--accent-soft); }
 .panel__text > * + * { margin-top: var(--sp-4); }
 .panel__text .text { color: var(--ink); }
+.inquiry-note { display: block; }
+@media (min-width: 48em) { .inquiry-note { white-space: nowrap; } }
 .panel__link { justify-self: start; }
 @media (min-width: 64em) {
   .panel { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-grid); row-gap: var(--sp-4); align-items: start; }
@@ -498,7 +500,6 @@ main > :last-child { padding-bottom: var(--sp-section); }
 .asset-slot__label { font-size: var(--fs-small); font-weight: var(--fw-strong); color: var(--accent); }
 .asset-slot__frame p { max-width: 18em; color: var(--muted); }
 .asset-slot figcaption { margin-top: var(--sp-3); font-size: var(--fs-small); color: var(--muted); }
-.asset-slot[data-photo-slot="tofu-serving"] .asset-slot__frame { aspect-ratio: 16 / 10; }
 .product-card { min-width: 0; padding: var(--sp-5); border-radius: var(--r-lg); background: var(--bg); }
 .product-card__head h3 { margin-top: 0; }
 .product-card__head + .photo { margin-top: var(--sp-5); }
