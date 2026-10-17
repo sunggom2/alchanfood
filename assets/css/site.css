@@ -521,7 +521,12 @@ main > :last-child { padding-bottom: var(--sp-section); }
 }
 @media (max-width: 47.99em) {
   .chapter-panel .nowrap { white-space: normal; }
-  .chapter-panel .cuts__row { gap: var(--sp-1); }
+  .chapter-panel .cuts__list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+  .chapter-panel .cuts__row { min-width: 0; grid-template-rows: 2.8em auto auto; align-content: start; gap: var(--sp-2); padding-inline: var(--sp-1); text-align: center; font-size: var(--fs-small); }
+  .chapter-panel .cuts__row + .cuts__row { border-inline-start: 1px solid var(--line); }
+  .chapter-panel .cuts__row dt { align-self: center; font-size: var(--fs-small); line-height: 1.4; }
+  .chapter-panel .cuts__row dd:first-of-type { font-size: .9375rem; line-height: 1.5; }
+  .chapter-panel .cuts__row dd + dd { font-size: var(--fs-label); line-height: 1.5; }
 }
 
 /* ---------- 그린 포인트와 콘텐츠 강조 ---------- */
