@@ -518,6 +518,15 @@ main > :last-child { padding-bottom: var(--sp-section); }
   .chapter-panel .flow__list--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (min-width: 64em) {
+  .home-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-grid); padding-top: clamp(24px, 3vw, 40px); }
+  .home-summary > section { min-width: 0; padding-top: 0; }
+  .home-summary .chapter-panel, .home-summary .panel { height: 100%; padding: clamp(28px, 3vw, 40px); border-radius: var(--r-chapter); }
+  .home-summary .head, .home-summary .panel { display: flex; flex-direction: column; align-items: flex-start; }
+  .home-summary .head { height: 100%; }
+  .home-summary .panel { gap: var(--sp-5); }
+  .home-summary .head > .link, .home-summary .panel__link { margin-top: auto; }
+  .home-summary .head > .link { padding-top: var(--sp-5); }
+  .home-summary .panel__contact > div { grid-template-columns: auto minmax(0, 1fr); gap: var(--sp-4); }
   .facility-entry { grid-template-columns: minmax(0, 420px) minmax(0, 1fr); }
   .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .product-grid .photo img { height: auto; aspect-ratio: 4 / 3; }
