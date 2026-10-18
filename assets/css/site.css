@@ -569,9 +569,11 @@ main > :last-child { padding-bottom: var(--sp-section); }
   }
   .btn:active { transform: scale(.98); }
   .site-nav.is-open { animation: menu-in var(--d-menu) var(--ease-out); }
-  .home .hero__text .display { animation: hero-title-arrive 1500ms var(--ease-out) 1 both; }
+  .home .hero__text .display, .page-head h1 { animation: hero-title-arrive 1500ms var(--ease-out) 1 both; }
+  [data-reveal].is-revealing { animation: content-arrive 800ms var(--ease-out) 1 both; }
   .hero::before, .page-head::before, .panel::before { animation: green-arrive 4.8s var(--ease-out) 1 both; }
   @keyframes hero-title-arrive { from { opacity: 0; transform: translate3d(0, 20px, 0); } to { opacity: 1; transform: none; } }
+  @keyframes content-arrive { from { opacity: .3; transform: translate3d(0, 12px, 0); } to { opacity: 1; transform: none; } }
   @keyframes green-arrive { from { opacity: .35; transform: translate3d(16px, 12px, 0) scale(.96); } to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } }
   @keyframes menu-in { from { opacity: 0; transform: translateY(-8px); } }
 }

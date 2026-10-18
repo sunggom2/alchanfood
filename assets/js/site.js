@@ -1,5 +1,25 @@
-// 모바일 메뉴, 같은 페이지 안의 이동, 주소 복사.
+// 모바일 메뉴, 같은 페이지 안의 이동, 주소 복사, 한 번만 나타나는 콘텐츠.
 (() => {
+  const revealTargets = [...document.querySelectorAll('[data-reveal]')];
+  const pendingReveals = new Set(revealTargets);
+  let revealObserver;
+  // 바로가기와 초점 이동에서는 모션을 기다리지 않고 해당 내용을 보여 준다.
+  const finishReveals = (root = document) => {
+    revealTargets.forEach((target) => {
+      if (root.contains(target) || target.contains(root)) {
+        pendingReveals.delete(target);
+        revealObserver?.unobserve(target);
+        target.classList.remove('is-revealing');
+      }
+    });
+  };
+  const finishHashReveals = () => {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = id && document.getElementById(id);
+    if (target) finishReveals(target);
+  };
+
   const toggle = document.querySelector('.menu-toggle');
   const panel = document.getElementById('site-nav');
   if (toggle && panel) {
@@ -42,6 +62,7 @@
     // replaceState에 실패하는 환경에서는 브라우저의 기본 링크 이동을 사용한다.
     try { history.replaceState(history.state, '', url); } catch { return; }
     event.preventDefault();
+    finishReveals(target);
     const focusTarget = target.querySelector('h1, h2') || target;
     if (!focusTarget.hasAttribute('tabindex')) {
       focusTarget.setAttribute('tabindex', '-1');
@@ -67,6 +88,33 @@
       setTimeout(() => { status.textContent = ok ? '주소를 복사했습니다' : '주소를 선택했습니다. 복사해 주십시오.'; }, 100);
       clearTimeout(timer);
       timer = setTimeout(() => { label.textContent = '주소 복사'; copyBtn.classList.remove('is-done'); status.textContent = ''; }, 2000);
+    });
+  }
+
+  // 기본 상태는 항상 표시한다. JS나 관찰 기능이 없어도 빈 영역이 생기지 않는다.
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (!isIntersecting || !pendingReveals.has(target)) return;
+        pendingReveals.delete(target);
+        revealObserver.unobserve(target);
+        target.classList.add('is-revealing');
+      });
+    }, { threshold: 0.01 });
+    revealTargets.forEach((target) => revealObserver.observe(target));
+    finishHashReveals();
+    document.addEventListener('animationend', (event) => {
+      if (event.animationName === 'content-arrive') event.target.classList.remove('is-revealing');
+    });
+    document.addEventListener('focusin', (event) => finishReveals(event.target));
+    window.addEventListener('hashchange', finishHashReveals);
+    window.addEventListener('pageshow', (event) => { if (event.persisted) finishReveals(); });
+    reducedMotion.addEventListener('change', (event) => {
+      if (event.matches) {
+        revealObserver.disconnect();
+        finishReveals();
+      }
     });
   }
 })();
