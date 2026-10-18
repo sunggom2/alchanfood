@@ -115,6 +115,7 @@ h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); letter-spacing: var(--t
 .text + .text { margin-top: var(--sp-3); }
 .sentence { display: block; }
 .phrase { display: inline-block; }
+@media (max-width: 47.99em) { .mobile-phrase { display: inline-block; } }
 
 /* 섹션: 윗간격만 가진다 */
 .sec { padding-top: var(--sp-section); }
